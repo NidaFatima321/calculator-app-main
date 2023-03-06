@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <title>Frontend Mentor | Calculator app</title>
+    <style>
+      @media screen and (min-width:375px) and (max-width:2000px) {
+        body {
+        font-size: 15px;
+        font-family: "League Spartan", sans-serif;
+      }
+      button:hover {
+        cursor: pointer;
+      }
+      #calculator {
+        width: 30%;
+        margin: auto;
+        padding: 20px;
+      }
+      #calcTop {
+        display: flex;
+        font-size: 13px;
+        justify-content: space-between;
+        padding: 10px 20px;
+        align-items: last baseline;
+      }
+      #tright {
+        font-weight: bold;
+        display: flex;
+        align-items:last baseline;
+        justify-content: space-between;
+        width: 35%;
+      }
+      #calcTop button {
+        width: 15px;
+        height: 15px;
+        border: none;
+        border-radius: 50%;
+      }
+      #calcTop button:hover {
+        background-color: hsl(6, 63%, 50%);
+      }
+      #trrtop {
+        padding: 0px 8px;
+      }
+      #trrbottom {
+        padding: 5px;
+        border-radius: 20px;
+      }
+      /* calc middle */
+      #calcMiddle {
+        width: 100%;
+        height: 100px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        text-align: right;
+        font-weight: bold;
+      }
+      #txt {
+        position: relative;
+        top: 20%;
+        width: 95%;
+        margin: auto;
+      }
+      #text {
+        width: 95%;
+        margin: auto;
+        height: 50%;
+        top: 35%;
+        position: relative;
+        font-size: 32px;
+      }
+      #calcBottom {
+        height: 370px;
+        border-radius: 5px;
+      }
+      /* keys */
+      #keys {
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 50px 50px 50px 50px;
+        column-gap: 20px;
+        row-gap: 20px;
+        border-radius: 20px;
+      }
+
+      #keys button {
+        font-size: 32px;
+        font-weight: bold;
+        border-radius: 5px;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+      
+      /* keys another*/
+      #keysAnother {
+        width: 91%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      #keysAnother button {
+        width: 47.5%;
+        height: 50px;
+        font-weight: bold;
+        border-radius: 5px;
+        border: none;
+      }
+      #keysAnother button,
+      #keys div:nth-child(4) button {
+        font-size: 20px;
+      }
+      }
+
+
+      @media screen and (max-width:375px) {
+        body {
+        font-size: 15px;
+        font-family: "League Spartan", sans-serif;
+      }
+      button:hover {
+        cursor: pointer;
+      }
+      #calculator {
+        width: 98%;
+        margin: auto;
+        padding: 20px;
+      }
+      #calcTop {
+        display: flex;
+        font-size: 13px;
+        justify-content: space-between;
+        padding: 10px 20px;
+        align-items: last baseline;
+      }
+      #tright {
+        font-weight: bold;
+        display: flex;
+        align-items:last baseline;
+        justify-content: space-between;
+        width:40%;
+      }
+      #calcTop button {
+        width: 15px;
+        height: 15px;
+        border: none;
+        border-radius: 50%;
+      }
+      #calcTop button:hover {
+        background-color: hsl(6, 63%, 50%);
+      }
+      #trrtop {
+        padding: 0px 8px;
+      }
+      #trrbottom {
+        padding: 5px;
+        border-radius: 20px;
+      }
+      /* calc middle */
+      #calcMiddle {
+        width: 100%;
+        height: 100px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        text-align: right;
+        font-weight: bold;
+      }
+      #txt {
+        position: relative;
+        top: 20%;
+        width: 95%;
+        margin: auto;
+      }
+      #text {
+        width: 95%;
+        margin: auto;
+        height: 50%;
+        top: 35%;
+        position: relative;
+        font-size: 32px;
+      }
+      #calcBottom {
+        height: 370px;
+        border-radius: 5px;
+      }
+      /* keys */
+      #keys {
+        padding: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 50px 50px 50px 50px;
+        column-gap: 20px;
+        row-gap: 20px;
+        border-radius: 20px;
+      }
+
+      #keys button {
+        font-size: 32px;
+        font-weight: bold;
+        border-radius: 5px;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+      
+      /* keys another*/
+      #keysAnother {
+        width: 91%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      #keysAnother button {
+        width: 47.5%;
+        height: 50px;
+        font-weight: bold;
+        border-radius: 5px;
+        border: none;
+      }
+      #keysAnother button,
+      #keys div:nth-child(4) button {
+        font-size: 20px;
+      }
+        
+      }
+     
+    </style>
+  </head>
+  <body>
+    <div id="calculator">
+      <div id="calcTop">
+        <div id="tleft">
+          <h1>calc</h1>
+        </div>
+        <div id="tright">
+          <div id="trleft">THEME</div>
+          <div id="trright">
+            <div id="trrtop">1 &nbsp; 2 &nbsp; 3</div>
+            <div id="trrbottom">
+              <button onclick="theme1()" id="t1" class="tbtn"></button>
+              <button onclick="theme2()" id="t2" class="tbtn"></button>
+              <button onclick="theme3()" id="t3" class="tbtn"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="calcMiddle">
+        <div id="txt" style="font-size: 13px"></div>
+        <div id="text"></div>
+      </div>
+      <div id="calcBottom">
+        <div id="keys">
+          <div id="k1" class="key">
+            <button value="7" onclick="Getvalue(value)" class="kbtn">7</button>
+          </div>
+          <div id="k2" class="key">
+            <button value="8" onclick="Getvalue(value)" class="kbtn">8</button>
+          </div>
+          <div id="k3" class="key">
+            <button value="9" onclick="Getvalue(value)" class="kbtn">9</button>
+          </div>
+          <div id="k4" class="key">
+            <button id="del" onclick="deletes()" class="colorc">DEL</button>
+          </div>
+          <div id="k5" class="key">
+            <button value="4" onclick="Getvalue(value)" class="kbtn">4</button>
+          </div>
+          <div id="k6" class="key">
+            <button value="5" onclick="Getvalue(value)" class="kbtn">5</button>
+          </div>
+          <div id="k7" class="key">
+            <button value="6" onclick="Getvalue(value)" class="kbtn">6</button>
+          </div>
+          <div id="k8" class="key"><button onclick="add()" class="kbtn">+</button></div>
+          <div id="k9" class="key">
+            <button value="1" onclick="Getvalue(value)" class="kbtn">1</button>
+          </div>
+          <div id="10" class="key">
+            <button value="2" onclick="Getvalue(value)" class="kbtn">2</button>
+          </div>
+          <div id="k11" class="key">
+            <button value="3" onclick="Getvalue(value)" class="kbtn">3</button>
+          </div>
+          <div id="k12" class="key"><button onclick="sub()" class="kbtn">-</button></div>
+          <div id="k13" class="key">
+            <button value="." onclick="Getvalue(value)" class="kbtn">.</button>
+          </div>
+          <div id="k14" class="key">
+            <button value="0" onclick="Getvalue(value)" class="kbtn">0</button>
+          </div>
+          <div id="k15" class="key"><button onclick="divide()" class="kbtn">/</button></div>
+          <div id="k16" class="key">
+            <button onclick="multiply()" class="kbtn">*</button>
+          </div>
+        </div>
+        <div id="keysAnother">
+          <button onclick="reset()" class="colorc">RESET</button>
+          <button onclick="show()" id="eq">=</button>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    let val1 = "";
+    let val2 = "";
+    let scr = "";
+    let oper = "";
+    let final = undefined;
+    let midsc = document.getElementById("text");
+    let midsct = document.getElementById("txt");
+    function Getvalue(value) {
+      scr += value;
+      midsc.innerHTML = scr;
+    }
+    function add() {
+      oper = "+";
+      midsc.innerHTML = "";
+      midsct.innerHTML = scr + "+";
+      val1 = parseInt(scr);
+      scr = "";
+    }
+    function multiply() {
+      oper = "*";
+      midsc.innerHTML = "";
+      midsct.innerHTML = scr + "*";
+      val1 = parseInt(scr);
+      scr = "";
+    }
+    function sub() {
+      oper = "-";
+      midsc.innerHTML = "";
+      midsct.innerHTML = scr + "-";
+      val1 = parseInt(scr);
+      scr = "";
+    }
+    function divide() {
+      oper = "/";
+      midsc.innerHTML = "";
+      midsct.innerHTML = scr + "/";
+      val1 = parseInt(scr);
+      scr = "";
+    }
+    function deletes(){
+      midsc.innerHTML="";
+      scr="";
+    }
+    function show() {
+      val2 = parseInt(scr);
+      if (val1 !== "" && oper == "+") {
+        midsct.innerHTML = val1 + "+" + val2;
+        final = val1 + val2;
+        midsc.innerHTML = final;
+      }
+      if (val1 !== "" && oper == "*") {
+        midsct.innerHTML = val1 + "*" + val2;
+        final = val1 * val2;
+        midsc.innerHTML = final;
+      }
+      if (val1 !== "" && oper == "/") {
+        midsct.innerHTML = val1 + "/" + val2;
+        final = val1 / val2;
+        midsc.innerHTML = final;
+      }
+      if (val1 !== "" && oper == "-") {
+        midsct.innerHTML = val1 + "-" + val2;
+        final = val1 - val2;
+        midsc.innerHTML = final;
+      }
+      scr = final;
+    }
+
+    function reset() {
+      midsc.innerHTML = "";
+      midsct.innerHTML = "";
+      val1 = "";
+      val1 = "";
+      scr = "";
+    }
+
+    let tt1 = document.getElementById("t1");
+    let tt2 = document.getElementById("t2");
+    let tt3 = document.getElementById("t3");
+    let calct = document.getElementById("calcTop");
+    let calcm=document.getElementById("calcMiddle");
+    let calcb=document.getElementById("calcBottom");
+    let keyb=document.getElementsByClassName("kbtn");
+    let keyl=keyb.length;
+    let cc=document.getElementsByClassName("colorc");
+    let ccl=cc.length;
+    let finaleq=document.getElementById("eq");
+    let trrb=document.getElementById("trrbottom");
+    let tbtn=document.getElementsByClassName("tbtn");
+    let tbtnl=tbtn.length;
+
+    function theme1() {
+      tt1.style.backgroundColor = "hsl(6, 63%, 50%)";
+      tt2.style.backgroundColor = "transparent";
+      tt3.style.backgroundColor = "transparent";
+      document.body.style.backgroundColor = "hsl(222, 26%, 31%)";
+      calct.style.color="hsl(0, 0%, 100%)";
+      calcm.style.backgroundColor="hsl(224, 36%, 15%)";
+      calcm.style.color="hsl(0, 0%, 100%)";
+      calcb.style.backgroundColor="hsl(223, 31%, 20%)";
+      trrb.style.backgroundColor="hsl(223, 31%, 20%)";
+      for(let i=0;i<keyl;i++){
+        keyb[i].style.backgroundColor="hsl(30, 25%, 89%)";
+        keyb[i].style.boxShadow="0px 3px 1px hsl(28, 16%, 65%)";
+        keyb[i].style.color="hsl(221, 14%, 31%)";
+      }
+      for(let j=0;j<ccl;j++){
+        cc[j].style.backgroundColor="hsl(225, 21%, 49%)";
+        cc[j].style.boxShadow="0px 3px 1px hsl(224, 28%, 35%)";
+        cc[j].style.color="hsl(0, 0%, 100%)";
+      }
+      finaleq.style.backgroundColor="hsl(6, 63%, 50%)";
+      finaleq.style.boxShadow="0px 3px 1px hsl(6, 70%, 34%)";
+      finaleq.style.color="hsl(0, 0%, 100%)";
+    }
+    theme1();
+    function theme2() {
+      tt2.style.backgroundColor = "hsl(25, 98%, 40%)";
+      tt1.style.backgroundColor = "transparent";
+      tt3.style.backgroundColor = "transparent";
+      document.body.style.backgroundColor = "hsl(0, 0%, 90%)";
+      calct.style.color="black";
+      calcm.style.backgroundColor="hsl(0, 0%, 93%)";
+      calcm.style.color="hsl(60, 10%, 19%)";
+      calcb.style.backgroundColor="hsl(0, 5%, 81%)";
+      trrb.style.backgroundColor="hsl(0, 5%, 81%)";
+      for(let i=0;i<keyl;i++){
+        keyb[i].style.backgroundColor="hsl(45, 7%, 89%)";
+        keyb[i].style.boxShadow="0px 3px 1px hsl(35,11%,61%)";
+        keyb[i].style.color="hsl(60, 10%, 19%)";
+      }
+      for(let j=0;j<ccl;j++){
+        cc[j].style.backgroundColor="hsl(185, 42%, 37%)";
+        cc[j].style.boxShadow="0px 3px 1px hsl(185, 58%, 25%)";
+      }
+      finaleq.style.backgroundColor="hsl(25, 98%, 40%)";
+      finaleq.style.boxShadow="0px 3px 1px hsl(25, 99%, 27%)";
+    }
+    function theme3() {
+      tt3.style.backgroundColor = "hsl(176, 100%, 44%)";
+      tt1.style.backgroundColor = "transparent";
+      tt2.style.backgroundColor = "transparent";
+      document.body.style.backgroundColor = "hsl(268, 75%, 9%)";
+      calct.style.color="hsl(52, 100%, 62%)";
+      calcm.style.backgroundColor="hsl(268, 71%, 12%)";
+      calcm.style.color="hsl(52, 100%, 62%)";
+      calcb.style.backgroundColor="hsl(268, 71%, 12%)";
+      trrb.style.backgroundColor="hsl(268, 71%, 12%)";
+      for(let i=0;i<keyl;i++){
+        keyb[i].style.backgroundColor="hsl(268, 47%, 21%)";
+        keyb[i].style.boxShadow="0px 3px 2px hsl(290, 70%, 36%)";
+        keyb[i].style.color="hsl(52, 100%, 62%)";
+      }
+      for(let j=0;j<ccl;j++){
+        cc[j].style.backgroundColor="hsl(281, 89%, 26%)";
+        cc[j].style.boxShadow="0px 3px 1px hsl(285, 91%, 52%)";
+      }
+      finaleq.style.backgroundColor="hsl(176, 100%, 44%)";
+      finaleq.style.boxShadow="0px 3px 1px hsl(177, 92%, 70%)";
+    }
+  </script>
+</html>
